@@ -30,17 +30,17 @@ package cn.deathdealer;
  */
 public final class Alphabet {
 
-	/* 二进制 {0,1}*/
-	public static final String BINARY = "01";
+  /* 二进制 {0,1}*/
+  public static final String BINARY = "01";
 
-	/* 八进制 {0,1,2,3,4,5,6,7}*/
-	public static final String OCTAL = "01234567";
+  /* 八进制 {0,1,2,3,4,5,6,7}*/
+  public static final String OCTAL = "01234567";
 
-	/* 十进制数字 {0,1,2,3,4,5,6,7,8,9}*/
-	public static final String DIGITAL = "0123456789";
+  /* 十进制数字 {0,1,2,3,4,5,6,7,8,9}*/
+  public static final String DIGITAL = "0123456789";
 
-	/* 十六进制 {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F} */
-	public static final String HEXA_UPPER = "0123456789ABCDEF";
+  /* 十六进制 {0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F} */
+  public static final String HEXA_UPPER = "0123456789ABCDEF";
 
   /* 小写字母 */
   public static final String LOWER_CASE_LETTERS = "abcdefghijklmnopqrstuvwxyz";
