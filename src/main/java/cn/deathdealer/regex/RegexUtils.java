@@ -31,7 +31,7 @@ package cn.deathdealer.regex;
 public final class RegexUtils {
 
   /**
-   * 本正则表达式可以准确判断是否为中国大陆手机号码；
+   * 本正则表达式准确判断是否为中国大陆手机号码；
    * <li>中国移动：134(0-8)、135、136、137、138、139、147、150、151、152、157、158、159、178、182、183、184、187、188
    * <li>中国电信：133、153、173、177、180、181、189
    * <li>中国联通：130、131、132、145、155、156、175、176185、186
@@ -41,14 +41,40 @@ public final class RegexUtils {
   public static final String PATTERN_MOBILE =
       "^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|(147))\\d{8}$";
 
-  /** 本正则表达式可以准确判断是否为正确的EMail地址； */
+  /** 本正则表达式准确判断EMail地址； */
   public static final String PATTERN_EMAIL = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
 
-  /** 本正则表达式可以准确判断是否为正确的IP地址； */
+  /** 本正则表达式判断是否为IP地址； */
   public static final String PATTERN_IP =
       "((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)";
 
+  /** 本正则表达式判断是否为IPv4地址； */
+  public static final String PATTERN_IP4 =
+      "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
+
+  /** 本正则表达式判断是否为IPv6地址； */
+  public static final String PATTERN_IP6 =
+      "^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$";
+
+  public static final String PATTERN_MORSE =
+      "^[.-]{1,5}(?:[ \t]+[.-]{1,5})*(?:[ \t]+[.-]{1,5}(?:[ \t]+[.-]{1,5})*)*$";
+
+  /** 本正则表达式判断是否为HTML标签 */
+  public static final String PATTERN_HTML = "^<([a-z1-6]+)([^<]+)*(?:>(.*)<\\/\\1>| *\\/>)$";
+
+  /** 正整数 */
+  public static final String PATTERN_POSITIVE_INTEGER = "^\\d+$";
+
+  /** 正数 */
+  public static final String PATTERN_POSITIVE_NUMBER = "^\\d*\\.?\\d+$";
+
+  /** 负整数 */
+  public static final String PATTERN_NEGATIVE_INTEGER = "^-\\d+$";
+
+  /** 负数 */
+  public static final String PATTERN_NEGATIVE_NUMBER = "^-\\d*\\.?\\d+$";
+
   private RegexUtils() {
-    throw new AssertionError("you can not instantiate me");
+    throw new AssertionError("you do not need instantiate " + getClass().getName() + " manually.");
   }
 }

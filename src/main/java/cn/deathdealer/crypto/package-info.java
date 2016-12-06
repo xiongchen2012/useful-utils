@@ -26,4 +26,15 @@
  * @author: Deathdealer
  * @created_at: 2016/12/06 0:33
  */
+
+/**
+ * <p>加密工具类</p>
+ * 提供各种常见的加密算法<br>
+ * <li>AES</li>
+ * <li>DES</li>
+ * <li>MD5</li>
+ * <li>RSA</li>
+ */
+
 package cn.deathdealer.crypto;
+

@@ -48,11 +48,11 @@ public final class Alphabet {
   /* 大写字母 */
   public static final String UPPER_CASE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  /* 数字和字母集合 */
+  /* 数字、字母集合 */
   public static final String DIGITAL_AND_LETTERS =
       DIGITAL + LOWER_CASE_LETTERS + UPPER_CASE_LETTERS;
 
   private Alphabet() {
-    throw new AssertionError("you do not need instance " + getClass().getName() + " manually.");
+    throw new AssertionError("you do not need instantiate " + getClass().getName() + " manually.");
   }
 }
