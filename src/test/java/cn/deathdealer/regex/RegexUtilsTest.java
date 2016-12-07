@@ -64,4 +64,47 @@ public class RegexUtilsTest {
     assertFalse(
         "xiongchen2046@163.公司 is NOT valid", pattern.matcher("xiongchen2046@163.公司").matches());
   }
+
+  @Test
+  public void testIsMobile() throws Exception {
+
+    /*移动*/
+    assertFalse(RegexUtils.isMobile("1928"));
+	  assertFalse(RegexUtils.isMobile("12450968299"));
+    assertTrue(RegexUtils.isMobile("13450968299"));
+    assertTrue(RegexUtils.isMobile("13542744575"));
+    assertTrue(RegexUtils.isMobile("13652760984"));
+    assertTrue(RegexUtils.isMobile("13790792474"));
+    assertTrue(RegexUtils.isMobile("13825443684"));
+    assertTrue(RegexUtils.isMobile("13928198152"));
+    assertTrue(RegexUtils.isMobile("14778088208"));
+    assertTrue(RegexUtils.isMobile("15018671806"));
+    assertTrue(RegexUtils.isMobile("15118967564"));
+    assertTrue(RegexUtils.isMobile("15220663284"));
+    assertTrue(RegexUtils.isMobile("15724004377"));
+    assertTrue(RegexUtils.isMobile("15807698504"));
+    assertTrue(RegexUtils.isMobile("15918255432"));
+    assertTrue(RegexUtils.isMobile("17801800156"));
+    assertTrue(RegexUtils.isMobile("18200880529"));
+    assertTrue(RegexUtils.isMobile("18318888743"));
+    assertTrue(RegexUtils.isMobile("18476456683"));
+    assertTrue(RegexUtils.isMobile("18776456683"));
+    assertTrue(RegexUtils.isMobile("18814057784"));
+  }
+
+  @Test
+  public void testIsCNChar() throws Exception {
+    assertFalse("english is NOT Chinese", RegexUtils.isCNString("english"));
+    assertFalse("10086 is NOT Chinese", RegexUtils.isCNString("10086"));
+    assertTrue("中文 is Chinese", RegexUtils.isCNString("中文"));
+    assertFalse("中文a is NOT Chinese", RegexUtils.isCNString("中文a"));
+    assertFalse("サュモャャハぬなまむ is NOT Chinese", RegexUtils.isCNString("サュモャハぬなまむ"));
+  }
+
+	@Test
+	public void testIsJPChar() throws Exception {
+		assertTrue("サュモャャハぬなまむ is Japanese", RegexUtils.isJPString("サュモャハぬなまむ"));
+		assertFalse("中文 is NOT Japanese", RegexUtils.isJPString("中文"));
+		assertFalse("string is NOT Japanese", RegexUtils.isJPString("string"));
+	}
 }

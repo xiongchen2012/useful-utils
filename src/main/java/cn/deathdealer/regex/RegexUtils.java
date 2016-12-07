@@ -27,8 +27,11 @@ package cn.deathdealer.regex;
 import java.util.regex.Pattern;
 
 /**
- * @author: Deathdealer
- * @created_at: 2016/12/06 0:12 正则表达式工具类
+ * 正则表达式工具类
+ *
+ * @author Deathdealer
+ * @created_at 2016/12/06 0:12
+ * @since 1.0
  */
 public final class RegexUtils {
 
@@ -103,17 +106,96 @@ public final class RegexUtils {
   public static final String PATTERN_NEGATIVE_NUMBER = "^-\\d*\\.?\\d+$";
 
   private RegexUtils() {
-    throw new AssertionError("you do not need instantiate " + getClass().getName() + " manually.");
+    throw new AssertionError(
+        "you do not need to instantiate " + getClass().getName() + " manually.");
   }
 
   /**
    * 判断输入的字符串是否匹配给定正则表达式
+   *
    * @param pattern 正则表达式
    * @param input 要匹配的字符串
    * @return {@code true}: 匹配<br>
-   *         {@code false}: 不匹配
+   *     {@code false}: 不匹配
    */
   public static boolean isMatch(String pattern, CharSequence input) {
     return input != null && input.length() > 0 && Pattern.matches(pattern, input);
+  }
+
+  /**
+   * 验证给定的字符串是否为合法的手机号
+   *
+   * @param mobile 验证的手机号
+   * @return {@code true}: 手机号<br>
+   *     {@code false}: 非手机号
+   */
+  public static boolean isMobile(String mobile) {
+    return mobile != null && mobile.length() > 0 && isMatch(PATTERN_MOBILE, mobile);
+  }
+
+  /**
+   * 验证给定的字符串是否为合法的电话号码
+   *
+   * @param tel 验证的电话号码
+   * @return {@code true}: 电话号码<br>
+   *     {@code false}: 非电话号码
+   */
+  public static boolean isTel(String tel) {
+    return tel != null && tel.length() > 0 && isMatch(PATTERN_TEL, tel);
+  }
+
+  /**
+   * 验证给定的字符串是否为中文
+   *
+   * @param cnString 验证的字符串
+   * @return {@code true}: 中文<br>
+   *     {@code false}: 非中文
+   */
+  public static boolean isCNString(String cnString) {
+    return cnString != null && cnString.length() > 0 && isMatch(PATTERN_CN, cnString);
+  }
+
+  /**
+   * 验证给定的字符串是否为日文
+   *
+   * @param jpString 验证的字符串
+   * @return {@code true}: 日文<br>
+   *     {@code false}: 非日文
+   */
+  public static boolean isJPString(String jpString) {
+    return jpString != null && jpString.length() > 0 && isMatch(PATTERN_JP, jpString);
+  }
+
+  /**
+   * 验证给定的字符串是否为18位身份证号
+   *
+   * @param idNum 身份证号
+   * @return {@code true}: 合法18位身份证号<br>
+   *     {@code false}: 非法18位身份证号
+   */
+  public static boolean isIDNum18(String idNum) {
+    return idNum != null && idNum.length() > 0 && isMatch(PATTERN_ID18, idNum);
+  }
+
+  /**
+   * 验证给定的字符串是否为15位身份证号
+   *
+   * @param idNum 身份证号
+   * @return {@code true}: 合法15位身份证号<br>
+   *     {@code false}: 非法15位身份证号
+   */
+  public static boolean isIDNum15(String idNum) {
+    return idNum != null && idNum.length() > 0 && isMatch(PATTERN_ID15, idNum);
+  }
+
+  /**
+   * 验证给定的IP地址是否合法
+   *
+   * @param ip IP地址
+   * @return {@code true}: 合法IP地址<br>
+   *     {@code false}: 非IP地址
+   */
+  public static boolean isIP(String ip) {
+    return ip != null && ip.length() > 0 && isMatch(PATTERN_IP, ip);
   }
 }
