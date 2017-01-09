@@ -198,4 +198,41 @@ public final class RegexUtils {
   public static boolean isIP(String ip) {
     return ip != null && ip.length() > 0 && isMatch(PATTERN_IP, ip);
   }
+
+  public static boolean isIP4(String ipv4) {
+    return ipv4 != null && ipv4.length() > 0 && isMatch(PATTERN_IP4, ipv4);
+  }
+
+  public static boolean isIP6(String ipv6) {
+    return ipv6 != null && ipv6.length() > 0 && isMatch(PATTERN_IP6, ipv6);
+  }
+
+  public static boolean isMorse(String morse) {
+    return morse != null && morse.length() > 0 && isMatch(PATTERN_MORSE, morse);
+  }
+
+  public static boolean isHtml(String html) {
+    return html != null && html.length() > 0 && isMatch(PATTERN_HTML, html);
+  }
+
+  public static boolean isDoubleByte(String doubleByte) {
+    return doubleByte != null
+        && doubleByte.length() > 0
+        && isMatch(PATTERN_DOUBLE_BYTE, doubleByte);
+  }
+
+  public static boolean isZipCode(String zipCode) {
+    return zipCode != null && zipCode.length() > 0 && isMatch(PATTERN_ZIPCODE, zipCode);
+  }
+
+  public static boolean isPositiveInteger(int positiveInteger) {
+    return positiveInteger > 0
+        && isMatch(PATTERN_POSITIVE_INTEGER, String.valueOf(positiveInteger));
+  }
+
+
+	public static boolean isPositiveNumber(Number positiveNumber) {
+		return positiveNumber.doubleValue() > 0
+				&& isMatch(PATTERN_POSITIVE_NUMBER, String.valueOf(positiveNumber));
+	}
 }

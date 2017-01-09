@@ -30,6 +30,8 @@ package cn.deathdealer.regex;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.lang.reflect.Constructor;
 import java.util.regex.Pattern;
 import static org.junit.Assert.*;
 /**
@@ -107,4 +109,11 @@ public class RegexUtilsTest {
 		assertFalse("中文 is NOT Japanese", RegexUtils.isJPString("中文"));
 		assertFalse("string is NOT Japanese", RegexUtils.isJPString("string"));
 	}
+
+  @Test
+  public void testIsHtml() throws Exception {
+  	assertTrue("",RegexUtils.isHtml("<ssss></ssss>"));
+  }
+
+
 }
